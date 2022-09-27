@@ -39,13 +39,13 @@ function App() {
       headers:{
         'Content-Type':'application/json'
       },
-      body: JSON.stringify({...car})
+      body: JSON.stringify({...car, active:false})
     })
     .then(res => res.json())
     .then(data => {
       console.log(data)
       setCars(cars.map(c => {
-        if(car.id === data.id){
+        if(c.id === data.id){
           return data
         } else {
           return c
