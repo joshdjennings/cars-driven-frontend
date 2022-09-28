@@ -15,7 +15,7 @@ function Card({car, patchCar, handleDelete}){
           <p>Year Bought: {car.year_bought}</p>
           <p>Year Sold: {car.year_sold}</p>
 
-          {car.active? <button onClick={()=> patchCar(car)}>Deactivate Car</button> : <button>Car is dead</button>}
+          {car.active? <button onClick={()=> patchCar(car)}>Deactivate Car</button> : <h3>Car is dead</h3>}
           <button onClick={() => handleDelete(car.id)}>Delete Car</button>
         </div> 
       )
