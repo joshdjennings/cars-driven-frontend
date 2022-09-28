@@ -1,18 +1,18 @@
 import {useState} from 'react'
 function DriverForm({postDriver}){
-    const [formData, setFormData] = useState({
+    const [driverFormData, setDriverFormData] = useState({
         name:'',
         age:'',
         quote: '',
     })
     const handleChange = (e) => {
-        setFormData({...formData, [e.target.name]:e.target.value})
+        setDriverFormData({...driverFormData, [e.target.name]:e.target.value})
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmitDriver = (e) => {
         e.preventDefault()
-        postDriver(formData)
-        setFormData({
+        postDriver(driverFormData)
+        setDriverFormData({
             name:'',
             age:'',
             quote: '',
@@ -20,18 +20,18 @@ function DriverForm({postDriver}){
     } 
     
     return(
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmitDriver}>
             <label>
                 Driver:
-                <input type="text" name="name" value={formData.name} onChange={handleChange}/>
+                <input type="text" name="name" value={driverFormData.name} onChange={handleChange}/>
             </label>
              <label>
                 Age:
-                <input type="number" name="age" value={formData.age} onChange={handleChange}/>
+                <input type="number" name="age" value={driverFormData.age} onChange={handleChange}/>
             </label>
             <label>
                 Favorite Quote:
-                <input type="text" name="quote" value={formData.quote} onChange={handleChange}/>
+                <input type="text" name="quote" value={driverFormData.quote} onChange={handleChange}/>
             </label>
             <input type="submit" value="Submit" />
         </form>
