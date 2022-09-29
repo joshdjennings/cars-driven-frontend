@@ -9,7 +9,7 @@ import '../App.css';
 function App() {
   const [cars, setCars] = useState([])
   const [drivers, setDrivers] = useState([])
-
+  const [show, setShow] = useState(false)
   useEffect(()=> {
   //Gets cars and drivers
     fetch('http://localhost:9292/cars')
@@ -20,6 +20,12 @@ function App() {
     .then(res => res.json())
     .then(setDrivers)
   },[])
+
+  const getCar = (id) => {
+    fetch(`http://localhost:9292/cars${id}`)
+    .then(res => res.json())
+    .then(car => console.log(car))
+  }
 
   //Creates a Car 
   const postCar = (car) => {
@@ -47,7 +53,7 @@ function App() {
     })
     .then(res => res.json())
     .then(newDriver => {
-      setCars([newDriver,...drivers])
+      setDrivers([newDriver,...drivers])
     })
   }
   
@@ -98,20 +104,23 @@ function App() {
 
 
   return (
+    // create state for viewing drivers vs cars
     <div className="App">
-      {/* {console.log(cars)}
-      {console.log(drivers)} */}
+      {console.log(cars)}
+      {console.log(drivers)}
+      <div className="header">
+        <h2>Cars site</h2>
+        <p>Here you can enter and keep track of cars you've driven and/or no longer drive anymore.</p>
+      </div>
       <div>
-      <CreateForm postCar={postCar}/>
-      {cars.map(c => <Card car={c} patchCar={patchCar} handleDelete={handleDelete} key={`${c.id}${c.name}`}/>)}
-      </div> 
-      <div>
-      <DriverForm postDriver={postDriver}/>
-      {drivers.map(d => <Driver driver={d} handleDeleteDriver={handleDeleteDriver} key={`${d.id}${d.name}`}/>)}
+        <button onClick={() => setShow(true)}>Enter a New Car</button>{show && <CreateForm postCar={postCar}/> }
+        {/* {cars.map(c => <Card car={c} patchCar={patchCar} handleDelete={handleDelete} key={`${c.id}${c.name}`}/>)} */}
+        <button onClick={() => setShow(false)}>Enter a New Driver</button><>{!show && <DriverForm postDriver={postDriver}/> }</>
+        {/* {drivers.map(d => <Driver driver={d} handleDeleteDriver={handleDeleteDriver} key={`${d.id}${d.name}`}/>)} */}
       </div> 
 
     </div> 
-  );
+  );  
 }
 
 export default App;
