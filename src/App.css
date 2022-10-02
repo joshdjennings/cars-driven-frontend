@@ -1,38 +1,110 @@
 .App {
-  text-align: center;
+	text-align: center;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: aliceblue;
+} */
+
+/* .form-row {
+	padding-bottom: 2.5rem;
+	width: 75%;
+	margin: 0 auto;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Playfair Display', serif;
+	margin-bottom: 1em;
+	color: aquamarine;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p,
+ul {
+	margin-bottom: 1em;
+	color: aquamarine;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #552eb0;
 }
 
-.App-link {
-  color: #61dafb;
+nav a {
+	display: inline-block;
+	margin: 1rem 2rem;
+	text-decoration: none;
+	font-size: 1.2em;
+	color: #b0a61c;
+	transition: 0.5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav a:hover,
+nav a:active {
+	color: #fcf15b;
+}
+
+/* .card {
+	width: 50vh;
+} */
+
+.cards {
+	position: relative;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* .card .image {
+	height: 187.5px;
+	position: relative;
+	width: 375px;
+	display: flex;
+	justify-content: center;
+}
+*/
+.CreateForm {
+	height: 70vh;
+	min-height: 100px;
+	background-color: #8b5bfc;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	padding: 1rem;
+}
+
+#home {
+	height: 50vh;
+	background-color: #8b5bfc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 1rem;
+}
+
+#soloList,
+#results {
+	height: 25vh;
+	background-color: #8b5bfc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 1rem;
 }
