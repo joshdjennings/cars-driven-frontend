@@ -1,23 +1,15 @@
 .App {
 	text-align: center;
-}
-* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* body {
+body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	color: aliceblue;
-} */
-
-/* .form-row {
-	padding-bottom: 2.5rem;
-	width: 75%;
-	margin: 0 auto;
-} */
+}
 
 h1,
 h2,
@@ -36,48 +28,36 @@ ul {
 	color: aquamarine;
 }
 
-nav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	background-color: #552eb0;
-}
-
-nav a {
-	display: inline-block;
-	margin: 1rem 2rem;
-	text-decoration: none;
-	font-size: 1.2em;
-	color: #b0a61c;
-	transition: 0.5s;
-}
-
-nav a:hover,
-nav a:active {
-	color: #fcf15b;
-}
+cards {
+ 
+  display: grid;
+   
+  grid-template-columns: repeat(3, 1fr);
+   
+  grid-auto-rows: auto;
+   
+  grid-gap: 1rem;
+   
+  }
+    
+  .card {
+   
+  border: 2px solid #e7e7e7;
+   
+  border-radius: 4px;
+   
+  padding: .5rem;
+   
+  }
 
 /* .card {
 	width: 50vh;
+	position: relative;
+	display: grid;
+	flex-wrap: wrap;
 } */
 
-.cards {
-	position: relative;
-	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
-}
-
-/* .card .image {
-	height: 187.5px;
-	position: relative;
-	width: 375px;
-	display: flex;
-	justify-content: center;
-}
-*/
-.CreateForm {
+#DriverForm {
 	height: 70vh;
 	min-height: 100px;
 	background-color: #8b5bfc;
@@ -85,26 +65,5 @@ nav a:active {
 	justify-content: center;
 	flex-direction: column;
 	text-align: center;
-	padding: 1rem;
-}
-
-#home {
-	height: 50vh;
-	background-color: #8b5bfc;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 1rem;
-}
-
-#soloList,
-#results {
-	height: 25vh;
-	background-color: #8b5bfc;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
 	padding: 1rem;
 }

@@ -1,8 +1,8 @@
 function Card({car, patchCar, handleDelete}){
   console.log(car)
     return(
-        <div>
-          <h3>Driver: {car.driver_name}</h3>
+        <div className="card">
+          <p>Driver: {car.driver_name}</p>
           <p>Make: {car.make}</p>
           <p>Model: {car.model}</p>
           <p>Year: {car.year}</p>
@@ -13,9 +13,8 @@ function Card({car, patchCar, handleDelete}){
           <p>Transmission: {car.transmission}</p>
           <p>Drive: {car.drive}</p>
           <p>Year Bought: {car.year_bought}</p>
-          <p>Year Sold: {car.year_sold}</p>
 
-          {car.active? <button onClick={()=> patchCar(car)}>Deactivate Car</button> : <h3>Car is dead</h3>}
+          {car.sold? <button onClick={()=> patchCar(car)}>Mark Car as SOLD</button> : <h2>Car was sold</h2>}
           <button onClick={() => handleDelete(car.id)}>Delete Car</button>
         </div> 
       )
