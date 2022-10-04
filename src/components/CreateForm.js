@@ -12,9 +12,8 @@ function CreateForm({postCar}){
         transmission: '',
         drive: '',
         year_bought: '',
-        year_sold: '',
         driver_name: '',
-        active: true
+        sold:false
     })
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]:e.target.value})
@@ -35,7 +34,6 @@ function CreateForm({postCar}){
             transmission: '',
             drive: '',
             year_bought: '',
-            year_sold: '',
             driver_name: ''
         })
     } 
@@ -85,10 +83,6 @@ function CreateForm({postCar}){
             <label>
                 Year Bought:
                 <input type="number" name="year_bought" value={formData.year_bought} onChange={handleChange}/>
-            </label>
-            <label>
-                Year Sold:
-                <input type="number" name="year_sold" value={formData.year_sold} onChange={handleChange}/>
             </label>
             <input type="submit" value="Submit" />
         </form>

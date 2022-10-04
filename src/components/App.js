@@ -25,11 +25,11 @@ function App() {
   },[])
 
   // Gets one car
-  const getCar = (id) => {
-    fetch(`http://localhost:9292/cars${id}`)
-    .then(res => res.json())
-    .then(car => console.log(car))
-  }
+  // const getCar = (id) => {
+  //   fetch(`http://localhost:9292/cars${id}`)
+  //   .then(res => res.json())
+  //   .then(car => console.log(car))
+  // }
 
   //Creates a Car 
   const postCar = (car) => {
@@ -132,7 +132,6 @@ function App() {
         <ul>Here you can enter and keep track of cars you've driven and/or no longer drive anymore.</ul>
       </div>
 
-      <body>
         <div className='buttons'>
           <button onClick={toggleShowCars}>Cars</button>
            {showCars && <>{cars.map(c => <Card car={c} patchCar={patchCar} handleDelete={handleDelete} key={`${c.id}${c.name}`}/>)}</>}
@@ -148,8 +147,7 @@ function App() {
           <button onClick={toggleDriverForm}>New Driver Form</button>
             {showDriverForm && <DriverForm postDriver={postDriver}/>}
         </div>
-      </body>
-      
+
     </div> 
   );  
 }

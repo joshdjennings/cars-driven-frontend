@@ -5,34 +5,35 @@
 	box-sizing: border-box;
 }
 
-body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	color: aliceblue;
-}
-
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: 'Playfair Display', serif;
+h3 {
+	font-family: 'Cantarell', serif;
 	margin-bottom: 1em;
-	color: aquamarine;
+	color: rgb(172, 57, 31);
 }
 
 p,
 ul {
 	margin-bottom: 1em;
-	color: aquamarine;
+	color: rgb(144, 127, 255);
 }
 
-cards {
+/* .button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.25em 0.75em;
+	min-width: 10ch;
+	min-height: 44px;
+  } */
+
+/* .cards {
  
   display: grid;
-   
-  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+
+  grid-template-columns: repeat(3, 200px);
    
   grid-auto-rows: auto;
    
@@ -40,30 +41,13 @@ cards {
    
   }
     
-  .card {
-   
-  border: 2px solid #e7e7e7;
-   
-  border-radius: 4px;
-   
-  padding: .5rem;
-   
-  }
+.card {
 
-/* .card {
-	width: 50vh;
-	position: relative;
-	display: grid;
-	flex-wrap: wrap;
+border: 2px solid #e7e7e7;
+
+border-radius: 4px;
+
+padding: .5rem;
+
 } */
 
-#DriverForm {
-	height: 70vh;
-	min-height: 100px;
-	background-color: #8b5bfc;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
-	padding: 1rem;
-}
