@@ -126,12 +126,10 @@ function App() {
       {/* {console.log(cars)}
       {console.log(drivers)} */}
       <div className="header">
-        <h1>What cars have I owned?</h1>
-        <h2>Have you ever been asked, "What was your favorite car?"</h2>
-        <h2>Have you every struggled to remember which car you had and when?</h2> 
-        <ul>Here you can enter and keep track of cars you've driven and/or no longer drive anymore.</ul>
-      </div>
-
+        <h1>Car & Driver Database</h1>
+        <h2>This is a simple app that can help enter cars and their specs into a db.</h2>
+        <p>Click the Cars button to toggle cars and their drivers that exist in the database.  You can mark the car as sold, indicating that the owner no longer drives that vehicle</p>
+        <p>Click the New Car button to toggle a form to enter a new car and it's specs and add it to the database.</p> 
         <div className='buttons'>
           <button onClick={toggleShowCars}>Cars</button>
            {showCars && <>{cars.map(c => <Card car={c} patchCar={patchCar} handleDelete={handleDelete} key={`${c.id}${c.name}`}/>)}</>}
@@ -139,7 +137,8 @@ function App() {
           <button onClick={toggleCarForm}>New Car Form</button>
            {showCarForm && <CreateForm postCar={postCar}/>}
         </div>
-         
+        <p>Click the Drivers button to toggle Drivers and some basic info about them from the database; including their favorite quote.  You can delete a driver from the database if you like.</p>
+        <p>Click the New Driver button to toggle a form to enter a new driver and thei basic info and add it to the database.</p> 
         <div>
           <button onClick={toggleShowDrivers}>Drivers</button>
             {showDrivers && <>{drivers.map(d => <Driver driver={d} handleDeleteDriver={handleDeleteDriver} key={`${d.id}${d.name}`}/>)}</>}
@@ -147,6 +146,11 @@ function App() {
           <button onClick={toggleDriverForm}>New Driver Form</button>
             {showDriverForm && <DriverForm postDriver={postDriver}/>}
         </div>
+      </div>
+
+        
+         
+        
 
     </div> 
   );  
