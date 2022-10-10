@@ -68,7 +68,7 @@ function App() {
       headers:{
         'Content-Type':'application/json'
       },
-      body: JSON.stringify({...car, sold:false})
+      body: JSON.stringify({...car, not_sold:false})
     })
     .then(res => res.json())
     .then(data => {

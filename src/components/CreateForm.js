@@ -13,7 +13,7 @@ function CreateForm({postCar}){
         drive: '',
         year_bought: '',
         driver_name: '',
-        sold:false
+        not_sold:false
     })
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]:e.target.value})
