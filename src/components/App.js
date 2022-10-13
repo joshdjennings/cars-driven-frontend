@@ -147,11 +147,6 @@ function App() {
             {showDriverForm && <DriverForm postDriver={postDriver}/>}
         </div>
       </div>
-
-        
-         
-        
-
     </div> 
   );  
 }
