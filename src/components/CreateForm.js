@@ -29,7 +29,7 @@ function CreateForm({postCar}){
         <form onSubmit={handleSubmit}>
             <label>
                 Driver:
-                <input type="select" name="driver_name" value={formData.driver_name} onChange={handleChange}/>
+                <input type="text" name="driver_name" value={formData.driver_name} onChange={handleChange}/>
             </label>
              <label>
                 Make:

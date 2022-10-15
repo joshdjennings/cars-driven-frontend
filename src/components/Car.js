@@ -1,4 +1,4 @@
-function Card({car, patchCar, handleDelete}){
+function Car({car, patchCar, handleDelete}){
   console.log(car)
     return(
         <div className="card">
@@ -14,5 +14,5 @@ function Card({car, patchCar, handleDelete}){
       )
   }
   
-  export default Card;
+  export default Car;
   

@@ -1,9 +1,15 @@
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Navigation from './components/Navigation'
+import Home from './components/Home'
+import './App.css'
+
 import {useState, useEffect} from 'react'
-import Card from './Card'
-import CreateForm from './CreateForm'
-import Driver from './Driver'
-import DriverForm from './DriverForm'
-import '../App.css';
+import Car from './components/Car'
+import CreateForm from './components/CreateForm'
+import Driver from './containers/Driver'
+import DriverForm from './containers/DriverForm'
+
 
 function App() {
   const [cars, setCars] = useState([])
@@ -122,23 +128,28 @@ function App() {
 
 
   return (
-    <div className="App">
-      {/* {console.log(cars)}
-      {console.log(drivers)} */}
-      <div className="header">
-        <h1>Car & Driver Database</h1>
-        <h2>This is a simple app that can help enter cars and their specs into a db.</h2>
-        <p>Click the Cars button to toggle cars and their drivers that exist in the database.  You can mark the car as sold, indicating that the owner no longer drives that vehicle</p>
-        <p>Click the New Car button to toggle a form to enter a new car and it's specs and add it to the database.</p> 
+    <Router>
+      <Navigation />
+      <div className="App">
+     
+        <Routes>
+          <Route exact path='/' element={<Home/>} />
+          <Route exact path='/drivers' element={<Driver/>} />
+        </Routes>
+          <p>Click the Cars button to toggle cars and their drivers that exist in the database.  You can mark the car as sold, indicating that the owner no longer drives that vehicle</p>
+          <p>Click the New Car button to toggle a form to enter a new car and it's specs and add it to the database.</p>   
+       
         <div className='buttons'>
           <button onClick={toggleShowCars}>Cars</button>
-           {showCars && <>{cars.map(c => <Card car={c} patchCar={patchCar} handleDelete={handleDelete} key={`${c.id}${c.name}`}/>)}</>}
+           {showCars && <>{cars.map(c => <Car car={c} patchCar={patchCar} handleDelete={handleDelete} key={`${c.id}${c.name}`}/>)}</>}
             
           <button onClick={toggleCarForm}>New Car Form</button>
            {showCarForm && <CreateForm postCar={postCar}/>}
         </div>
-        <p>Click the Drivers button to toggle Drivers and some basic info about them from the database; including their favorite quote.  You can delete a driver from the database if you like.</p>
-        <p>Click the New Driver button to toggle a form to enter a new driver and thei basic info and add it to the database.</p> 
+
+          <p>Click the Drivers button to toggle Drivers and some basic info about them from the database; including their favorite quote.  You can delete a driver from the database if you like.</p>
+          <p>Click the New Driver button to toggle a form to enter a new driver and thei basic info and add it to the database.</p> 
+        
         <div>
           <button onClick={toggleShowDrivers}>Drivers</button>
             {showDrivers && <>{drivers.map(d => <Driver driver={d} handleDeleteDriver={handleDeleteDriver} key={`${d.id}${d.name}`}/>)}</>}
@@ -147,7 +158,7 @@ function App() {
             {showDriverForm && <DriverForm postDriver={postDriver}/>}
         </div>
       </div>
-    </div> 
+    </Router>
   );  
 }
 
